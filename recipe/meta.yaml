@@ -19,11 +19,11 @@ requirements:
     - pip
     - python >=3.5
   run:
-    - numpy>=1.14.4
-    - pycld2>=0.41
+    - numpy >=1.14.4
+    - pycld2 >=0.41
     - python >=3.5
-    - pyrsistent>=0.14.2
-    - regex>=2018.6.6
+    - pyrsistent >=0.14.2
+    - regex >=2018.6.6
 
 test:
   imports:
