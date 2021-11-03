@@ -1,5 +1,5 @@
 {% set name = "multi_rake" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,11 +7,11 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 885ab2fd795cb96015aa552f22b35b8ae9065ae2d2d5c1af42a1bb32e081bec4
+  sha256: 14bcf5febde321b62829ec0ba3f4a49615112d88c952d86f0ab53c0d5fdd7440
 
 build:
   noarch: python
-  number: 1
+  number: 0
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -19,10 +19,10 @@ requirements:
     - pip
     - python >=3.5
   run:
-    - cld2-cffi >=0.1.4
     - numpy >=1.14.4
-    - pyrsistent >=0.14.2
+    - pycld2 >=0.41
     - python >=3.5
+    - pyrsistent >=0.14.2
     - regex >=2018.6.6
 
 test:
@@ -40,6 +40,5 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - rluria14
-    - oblute
-    - benhuff
+    - d-cunningham
+    - JennaLipscomb
