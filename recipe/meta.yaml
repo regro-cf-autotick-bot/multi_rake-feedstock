@@ -11,21 +11,23 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python {{ python_min }}
   run:
     - numpy >=1.14.4
     - pycld2 >=0.41
-    - python >=3.5
+    - python >={{ python_min }}
     - pyrsistent >=0.14.2
     - regex >=2018.6.6
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - multi_rake
 
